@@ -1,3 +1,5 @@
+'use strict';
+
 let title;
 let screens;
 let screenPrice;
@@ -22,3 +24,32 @@ console.log("Стоимость верстки экранов " + screenPrice + 
 console.log("Стоимость разработки сайта " + fullPrice + " долларов");
 console.log(screens.toLowerCase().split(", "));
 console.log(fullPrice * (rollback / 100));
+
+title = prompt("Как называется ваш проект?");
+screens = prompt("Какие типы экранов нужно разработать?");
+screenPrice = +prompt("Сколько будет стоить данная работа?");
+adaptive = confirm("Нужен ли адаптив на сайте?");
+let serviceName = prompt("Какой дополнительный вид услуги нужен?");
+let servicePrice = +prompt("Сколько это будет стоить?");
+let serviceName2 = prompt("Какой дополнительный вид услуги нужен?");
+let servicePrice2 = +prompt("Сколько это будет стоить?");
+fullPrice = screenPrice + servicePrice + servicePrice2;
+let serivcePercentPrice = Math.ceil(fullPrice - ( fullPrice * ( rollback / 100) )); 
+console.log(serivcePercentPrice);
+
+if (fullPrice > 30000) {
+  alert("Даем скидку в 10%");
+  
+} else if (15000 < fullPrice < 30000) {
+  alert("Даем скидку в 5%");
+
+} else if (0 < fullPrice < 15000) {
+  alert("Скидка ге предусмотрена");
+
+} else if (fullPrice < 0) {
+  alert("Что то пошло не так");
+}
+
+
+
+
