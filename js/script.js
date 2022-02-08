@@ -1,3 +1,5 @@
+'use strict';
+
 
 
 // const appData = {
@@ -121,4 +123,41 @@
 
 
 // appData.start();
+
+
+
+const title = document.getElementsByTagName('h1')[0];
+const buttons = document.getElementsByClassName('handler_btn');
+const screenBtn = document.querySelector('.screen-btn');
+let itemsNumber = [];
+let itemsPercent = [];
+const rangeInput = document.querySelector('.rollback').querySelector('input[type="range"]');
+const spanRange = document.querySelector('.rollback').querySelector('span.range-value');
+const totalInputPrice = document.getElementsByClassName('total-input')[0];
+const totalInputScreens = document.getElementsByClassName('total-input')[1];
+const totalInputServices = document.getElementsByClassName('total-input')[2];
+const totalInputFullPrice = document.getElementsByClassName('total-input')[3];
+const totalInputRollback = document.getElementsByClassName('total-input')[4];
+let screen = document.querySelectorAll('.screen');
+
+
+
+
+
+
+
+const sortItems = function () {
+  let items = document.querySelectorAll('.other-items');
+  items.forEach(function(count) {
+    if(count.classList.contains('percent')){
+      itemsPercent.push(count);
+    } else if (count.classList.contains('number')){
+      itemsNumber.push(count);
+    }
+  });
+};
+
+sortItems();
+
+
 
